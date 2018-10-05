@@ -24,16 +24,14 @@ namespace ArduinoControl
             arduino.addStatusStrip(sslConnection, sslMessage);
         }
 
-        private void cbLED_CheckedChanged(object sender, EventArgs e)
+        private void btnOn_Click(object sender, EventArgs e)
         {
-            if (cbLED.Checked)
-            {
-                arduino.write("l");
-            }
-            else
-            {
-                arduino.write("L");
-            }
+            arduino.write("L");
+        }
+
+        private void btnOff_Click(object sender, EventArgs e)
+        {
+            arduino.write("l");
         }
     }
 }

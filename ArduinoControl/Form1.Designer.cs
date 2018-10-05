@@ -33,7 +33,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.sslConnection = new System.Windows.Forms.ToolStripStatusLabel();
             this.sslMessage = new System.Windows.Forms.ToolStripStatusLabel();
-            this.cbLED = new System.Windows.Forms.CheckBox();
+            this.btnOn = new System.Windows.Forms.Button();
+            this.btnOff = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -79,24 +80,33 @@
             this.sslMessage.Size = new System.Drawing.Size(269, 37);
             this.sslMessage.Text = "toolStripStatusLabel1";
             // 
-            // cbLED
+            // btnOn
             // 
-            this.cbLED.Appearance = System.Windows.Forms.Appearance.Button;
-            this.cbLED.AutoSize = true;
-            this.cbLED.Location = new System.Drawing.Point(242, 174);
-            this.cbLED.Name = "cbLED";
-            this.cbLED.Size = new System.Drawing.Size(69, 39);
-            this.cbLED.TabIndex = 2;
-            this.cbLED.Text = "LED";
-            this.cbLED.UseVisualStyleBackColor = true;
-            this.cbLED.CheckedChanged += new System.EventHandler(this.cbLED_CheckedChanged);
+            this.btnOn.Location = new System.Drawing.Point(702, 131);
+            this.btnOn.Name = "btnOn";
+            this.btnOn.Size = new System.Drawing.Size(203, 82);
+            this.btnOn.TabIndex = 3;
+            this.btnOn.Text = "LED On";
+            this.btnOn.UseVisualStyleBackColor = true;
+            this.btnOn.Click += new System.EventHandler(this.btnOn_Click);
+            // 
+            // btnOff
+            // 
+            this.btnOff.Location = new System.Drawing.Point(702, 255);
+            this.btnOff.Name = "btnOff";
+            this.btnOff.Size = new System.Drawing.Size(203, 85);
+            this.btnOff.TabIndex = 4;
+            this.btnOff.Text = "LED Off";
+            this.btnOff.UseVisualStyleBackColor = true;
+            this.btnOff.Click += new System.EventHandler(this.btnOff_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 842);
-            this.Controls.Add(this.cbLED);
+            this.Controls.Add(this.btnOff);
+            this.Controls.Add(this.btnOn);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -118,7 +128,8 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel sslConnection;
         private System.Windows.Forms.ToolStripStatusLabel sslMessage;
-        private System.Windows.Forms.CheckBox cbLED;
+        private System.Windows.Forms.Button btnOn;
+        private System.Windows.Forms.Button btnOff;
     }
 }
 
