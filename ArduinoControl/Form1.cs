@@ -15,6 +15,8 @@ namespace ArduinoControl
     {
         Arduino arduino;
 
+        bool ledOn = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -32,6 +34,22 @@ namespace ArduinoControl
         private void btnOff_Click(object sender, EventArgs e)
         {
             arduino.write("l");
+        }
+
+        private void btnToggle_Click(object sender, EventArgs e)
+        {
+            if (ledOn)
+            {
+                btnToggle.BackColor = SystemColors.Control;
+                arduino.write("l");
+                ledOn = false;
+            }
+            else
+            {
+                btnToggle.BackColor = Color.Red;
+                arduino.write("L");
+                ledOn = true;
+            }
         }
     }
 }

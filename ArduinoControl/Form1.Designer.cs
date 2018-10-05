@@ -35,6 +35,7 @@
             this.sslMessage = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnOn = new System.Windows.Forms.Button();
             this.btnOff = new System.Windows.Forms.Button();
+            this.btnToggle = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -100,11 +101,22 @@
             this.btnOff.UseVisualStyleBackColor = true;
             this.btnOff.Click += new System.EventHandler(this.btnOff_Click);
             // 
+            // btnToggle
+            // 
+            this.btnToggle.Location = new System.Drawing.Point(702, 478);
+            this.btnToggle.Name = "btnToggle";
+            this.btnToggle.Size = new System.Drawing.Size(203, 79);
+            this.btnToggle.TabIndex = 5;
+            this.btnToggle.Text = "toggle";
+            this.btnToggle.UseVisualStyleBackColor = true;
+            this.btnToggle.Click += new System.EventHandler(this.btnToggle_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 842);
+            this.Controls.Add(this.btnToggle);
             this.Controls.Add(this.btnOff);
             this.Controls.Add(this.btnOn);
             this.Controls.Add(this.statusStrip1);
@@ -130,6 +142,7 @@
         private System.Windows.Forms.ToolStripStatusLabel sslMessage;
         private System.Windows.Forms.Button btnOn;
         private System.Windows.Forms.Button btnOff;
+        private System.Windows.Forms.Button btnToggle;
     }
 }
 
