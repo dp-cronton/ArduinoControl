@@ -51,5 +51,10 @@ namespace ArduinoControl
                 ledOn = true;
             }
         }
+
+        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            arduino.write("a" + hScrollBar1.Value + ";");
+        }
     }
 }
