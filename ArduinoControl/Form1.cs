@@ -28,28 +28,43 @@ namespace ArduinoControl
 
         private void btnOn_Click(object sender, EventArgs e)
         {
-            arduino.write("L");
+            toggleOn();
         }
 
         private void btnOff_Click(object sender, EventArgs e)
         {
-            arduino.write("l");
+            toggleOff();
         }
 
         private void btnToggle_Click(object sender, EventArgs e)
         {
             if (ledOn)
             {
-                btnToggle.BackColor = SystemColors.Control;
-                arduino.write("l");
-                ledOn = false;
+                toggleOff();
             }
             else
             {
-                btnToggle.BackColor = Color.Red;
-                arduino.write("L");
-                ledOn = true;
+                toggleOn();
             }
+        }
+
+        private void toggleOn()
+        {
+            btnToggle.BackColor = Color.Red;
+            arduino.write("L");
+            ledOn = true;
+        }
+
+        private void toggleOff()
+        {
+            btnToggle.BackColor = SystemColors.Control;
+            arduino.write("l");
+            ledOn = false;
+        }
+
+        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            arduino.write("a"+hScrollBar1.Value+";");
         }
     }
 }

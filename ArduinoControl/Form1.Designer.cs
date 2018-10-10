@@ -36,6 +36,7 @@
             this.btnOn = new System.Windows.Forms.Button();
             this.btnOff = new System.Windows.Forms.Button();
             this.btnToggle = new System.Windows.Forms.Button();
+            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -111,11 +112,22 @@
             this.btnToggle.UseVisualStyleBackColor = true;
             this.btnToggle.Click += new System.EventHandler(this.btnToggle_Click);
             // 
+            // hScrollBar1
+            // 
+            this.hScrollBar1.Location = new System.Drawing.Point(122, 301);
+            this.hScrollBar1.Maximum = 180;
+            this.hScrollBar1.Name = "hScrollBar1";
+            this.hScrollBar1.Size = new System.Drawing.Size(400, 57);
+            this.hScrollBar1.TabIndex = 7;
+            this.hScrollBar1.Value = 90;
+            this.hScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar1_Scroll);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 842);
+            this.Controls.Add(this.hScrollBar1);
             this.Controls.Add(this.btnToggle);
             this.Controls.Add(this.btnOff);
             this.Controls.Add(this.btnOn);
@@ -143,6 +155,7 @@
         private System.Windows.Forms.Button btnOn;
         private System.Windows.Forms.Button btnOff;
         private System.Windows.Forms.Button btnToggle;
+        private System.Windows.Forms.HScrollBar hScrollBar1;
     }
 }
 
