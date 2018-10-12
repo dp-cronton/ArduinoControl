@@ -36,13 +36,15 @@
             this.btnOn = new System.Windows.Forms.Button();
             this.btnOff = new System.Windows.Forms.Button();
             this.btnToggle = new System.Windows.Forms.Button();
-            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.lblAngle = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -108,23 +110,13 @@
             // 
             // btnToggle
             // 
-            this.btnToggle.Location = new System.Drawing.Point(702, 478);
+            this.btnToggle.Location = new System.Drawing.Point(702, 380);
             this.btnToggle.Name = "btnToggle";
             this.btnToggle.Size = new System.Drawing.Size(203, 79);
             this.btnToggle.TabIndex = 5;
             this.btnToggle.Text = "toggle";
             this.btnToggle.UseVisualStyleBackColor = true;
             this.btnToggle.Click += new System.EventHandler(this.btnToggle_Click);
-            // 
-            // hScrollBar1
-            // 
-            this.hScrollBar1.Location = new System.Drawing.Point(135, 632);
-            this.hScrollBar1.Maximum = 180;
-            this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(953, 54);
-            this.hScrollBar1.TabIndex = 6;
-            this.hScrollBar1.Value = 90;
-            this.hScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar1_Scroll);
             // 
             // label1
             // 
@@ -160,16 +152,37 @@
             this.textBox2.TabIndex = 10;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(74, 526);
+            this.trackBar1.Maximum = 180;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(991, 101);
+            this.trackBar1.TabIndex = 11;
+            this.trackBar1.Value = 90;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // lblAngle
+            // 
+            this.lblAngle.AutoSize = true;
+            this.lblAngle.Location = new System.Drawing.Point(534, 598);
+            this.lblAngle.Name = "lblAngle";
+            this.lblAngle.Size = new System.Drawing.Size(47, 29);
+            this.lblAngle.TabIndex = 12;
+            this.lblAngle.Text = "90°";
+            this.lblAngle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 842);
+            this.Controls.Add(this.lblAngle);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.hScrollBar1);
             this.Controls.Add(this.btnToggle);
             this.Controls.Add(this.btnOff);
             this.Controls.Add(this.btnOn);
@@ -182,6 +195,7 @@
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,11 +211,12 @@
         private System.Windows.Forms.Button btnOn;
         private System.Windows.Forms.Button btnOff;
         private System.Windows.Forms.Button btnToggle;
-        private System.Windows.Forms.HScrollBar hScrollBar1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label lblAngle;
     }
 }
 

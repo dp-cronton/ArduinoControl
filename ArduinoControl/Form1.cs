@@ -32,33 +32,37 @@ namespace ArduinoControl
 
         private void btnOn_Click(object sender, EventArgs e)
         {
-            arduino.write(ledOnKey);
+            ledOn = true;
+            setLED();
         }
 
         private void btnOff_Click(object sender, EventArgs e)
         {
-            arduino.write(ledOffKey);
+            ledOn = false;
+            setLED();
         }
 
         private void btnToggle_Click(object sender, EventArgs e)
         {
             if (ledOn)
-            {
-                btnToggle.BackColor = SystemColors.Control;
-                arduino.write(ledOffKey);
                 ledOn = false;
-            }
             else
+                ledOn = true;
+            setLED();
+        }
+
+        private void setLED()
+        {
+            if (ledOn)
             {
                 btnToggle.BackColor = Color.Red;
                 arduino.write(ledOnKey);
-                ledOn = true;
             }
-        }
-
-        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-            arduino.write("a" + hScrollBar1.Value + ";");
+            else
+            {
+                btnToggle.BackColor = SystemColors.Control;
+                arduino.write(ledOffKey);
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -69,6 +73,12 @@ namespace ArduinoControl
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             ledOffKey = textBox2.Text;
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            arduino.write("a" + trackBar1.Value + ";");
+            lblAngle.Text = trackBar1.Value + "°";
         }
     }
 }
