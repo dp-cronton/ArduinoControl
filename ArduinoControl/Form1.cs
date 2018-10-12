@@ -75,10 +75,25 @@ namespace ArduinoControl
             ledOffKey = textBox2.Text;
         }
 
-        private void trackBar1_Scroll(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            trackBar1.Value = 90;
+        }
+
+        private void trackBar1_ValueChanged(object sender, EventArgs e)
         {
             arduino.write("a" + trackBar1.Value + ";");
             lblAngle.Text = trackBar1.Value + "°";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            trackBar1.Value = 180;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            trackBar1.Value = 0;
         }
     }
 }
